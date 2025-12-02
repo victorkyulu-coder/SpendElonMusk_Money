@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import * as IMAGES from "../images";
-import { compressImage } from "../utils/imageCompressor";
+import * as IMAGES from "../images/index"; 
 
 const Items = [
   { id: 1, item: "Apartments", price: 1500, image: IMAGES.apartments },
@@ -48,7 +47,7 @@ const ItemsList = () => {
     async function loadCompressed() {
       const compressed: any = {};
       for (const product of Items) {
-        compressed[product.id] = await compressImage(product.image);
+        compressed[product.id] = await compressed(product.image);
       }
       setCompressedImages(compressed);
     }
