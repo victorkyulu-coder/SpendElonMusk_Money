@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import * as IMAGES from "../images";
+import { compressImage } from "../utils/imageCompressor";
+
 const Items = [
   { id: 1, item: "Apartments", price: 1500, image: IMAGES.apartments },
   { id: 2, item: "Bull", price: 1200, image: IMAGES.bull },
